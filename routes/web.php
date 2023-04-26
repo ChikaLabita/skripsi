@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\TesteeController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +20,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/logout',[AuthenticatedSessionController::class,'destroy']);
+
+Route::prefix('testee')->middleware('theme:dashboard')->name('testee.')->group(function(){
+
+    Route::middleware(['auth:web'])->group(function(){    
+        Route::get('/dashboard',[TesteeController::class,'dashboard']);
+        Route::post('/register' ,[RegisteredUserController::class, 'store']);
+        Route::get('/logout',[AuthenticatedSessionController::class,'destroy']);
+    });
+
+});
 
 /*Auth::routes();
 

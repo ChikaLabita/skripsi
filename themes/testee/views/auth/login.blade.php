@@ -39,22 +39,22 @@
                                 class="rounded-circle" style="width: 100px;" alt="Avatar" /><br>
                             LOGIN
                         </h5>
-                        <form action="" method="POST">
+                        <form action="{{ route('login') }}" method="POST">
                             @csrf
                             <div class="col-md-12 mb-2">
                                 <label>Username</label>
-                                <input type="text" class="form-control" id="inputUsername" name="username"
+                                <input type="text" class="form-control" id="username" name="username"
                                     placeholder="Username" autofocus value="{{old('username')}}">
                                 @error('username')
-                                <small id="usernameid" class="text-danger">{{$message}}</small>
+                                <small id="username" class="text-danger">{{$message}}</small>
                                 @enderror
                             </div>
                             <div class="col-md-12 mb-2">
                                 <label>Password</label>
-                                <input type="password" class="form-control" id="inputPassword" name="password"
+                                <input type="password" class="form-control" id="password" name="password"
                                     placeholder="Password">
                                 @error('password')
-                                <small id="passwordid" class="text-danger">{{$message}}</small>
+                                <small id="password" class="text-danger">{{$message}}</small>
                                 @enderror
                             </div>
                             <div class="d-grid">

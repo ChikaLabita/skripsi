@@ -42,34 +42,32 @@
                                     class="rounded-circle" style="width: 100px;" alt="Avatar" /><br>
                                 REGISTER
                             </h5>
-                            <form action="" method="POST">
+                            <form action="{{ route('register') }}" method="POST">
                                 @csrf
                                 <div class="col-md-12 mb-2">
                                     <label>Full Name</label>
                                     <input type="text" class="form-control" id="fullname" placeholder="Full name"
                                         name="fullname" value="{{old('fullname')}}">
                                     @error('fullname')
-                                    <small id="fullnameid" class="text-danger">{{$message}}</small>
+                                    <small id="fullname" class="text-danger">{{$message}}</small>
                                     @enderror
                                 </div>
                                 <div class="col-md-12 mb-2">
-                                    <label for="is_admin">Gender</label>
+                                    <label for="gender">Gender</label>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="male"
-                                            value="male" checked>
+                                        <input class="form-check-input" type="radio" name="gender" value="male" checked>
                                         <label class="form-check-label" for="male">
                                             Male
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="female"
-                                            value="female">
+                                        <input class="form-check-input" type="radio" name="gender" value="female">
                                         <label class="form-check-label" for="female">
                                             Female
                                         </label>
                                     </div>
                                     @error('gender')
-                                    <small id="genderid" class="text-danger">{{$message}}</small>
+                                    <small id="gender" class="text-danger">{{$message}}</small>
                                     @enderror
                                 </div>
                                 <div class="col-md-12 mb-2">
@@ -77,7 +75,7 @@
                                     <input type="text" class="form-control" id="age" placeholder="Age" name="age"
                                         value="{{old('age')}}">
                                     @error('age')
-                                    <small id="ageid" class="text-danger">{{$message}}</small>
+                                    <small id="age" class="text-danger">{{$message}}</small>
                                     @enderror
                                 </div>
                                 <div class="col-md-12 mb-2">
@@ -85,24 +83,24 @@
                                     <input type="text" class="form-control" id="education" placeholder="Education"
                                         name="education" value="{{old('education')}}">
                                     @error('education')
-                                    <small id="educationid" class="text-danger">{{$message}}</small>
+                                    <small id="education" class="text-danger">{{$message}}</small>
                                     @enderror
                                 </div>
                                 <div class="col-md-12 mb-2">
                                     <label>Username</label>
-                                    <input type="text" class="form-control" id="inputusername" placeholder="Username"
+                                    <input type="text" class="form-control" id="username" placeholder="Username"
                                         name="username" value="{{old('username')}}">
                                     @error('username')
-                                    <small id="usernameid" class="text-danger">{{$message}}</small>
+                                    <small id="username" class="text-danger">{{$message}}</small>
                                     @enderror
 
                                 </div>
                                 <div class="col-md-12 mb-2">
                                     <label>Password</label>
-                                    <input type="password" class="form-control" id="inputpassword"
+                                    <input type="password" class="form-control" id="password"
                                         placeholder="Password" name="password">
                                     @error('password')
-                                    <small id=" passwordid" class="text-danger">{{$message}}</small>
+                                    <small id="password" class="text-danger">{{$message}}</small>
                                     @enderror
                                 </div>
                                 <div class="col-md-12 mb-2">
