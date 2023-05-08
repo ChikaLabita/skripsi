@@ -8,10 +8,6 @@ use App\Http\Controllers\Admin\EmailVerificationPromptController;
 use App\Http\Controllers\Admin\EmailVerificationNotificationController;
 use App\Http\Controllers\Admin\VerifyEmailController;
 
-
-
-
-
 Route::prefix('admin')->middleware('theme:admin')->name('admin.')->group(function(){
     
     Route::middleware(['guest:admin'])->group(function(){

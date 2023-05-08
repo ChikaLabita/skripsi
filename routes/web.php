@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Admin\AuthenticatedSessionAdminController;
 use App\Http\Controllers\TesteeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\RegisteredUserController;
@@ -25,8 +26,15 @@ Route::prefix('admin')->middleware('theme:dashboard')->name('admin.')->group(fun
 
     Route::middleware(['auth:admin'])->group(function(){    
         Route::get('/dashboard',[AdminController::class,'dashboard']);
+        Route::get('/profile',[AdminController::class,'profile']);
+        Route::get('/testee',[AdminController::class,'testee']);
+        Route::get('/faktor',[AdminController::class,'faktor']);
+        Route::get('/ciri',[AdminController::class,'ciri']);
+        Route::get('/soaltes',[AdminController::class,'soaltes']);
+        Route::get('/riwayat',[AdminController::class,'riwayat']);
+        Route::get('/rules',[AdminController::class,'rules']);
+        Route::get('/change-password',[AdminController::class,'changepw']);
         Route::post('/register' ,[RegisteredUserController::class, 'store']);
-        Route::get('/logout',[AuthenticatedSessionController::class,'destroy']);
     });
 
 });
@@ -35,7 +43,11 @@ Route::prefix('testee')->middleware('theme:dashboard')->name('testee.')->group(f
 
     Route::middleware(['auth:web'])->group(function(){    
         Route::get('/dashboard',[TesteeController::class,'dashboard']);
+        Route::get('/profile',[TesteeController::class,'profile']);
+        Route::get('/change-password',[TesteeController::class,'changepw']);
         Route::post('/register' ,[RegisteredUserController::class, 'store']);
+        Route::get('/tes',[TesteeController::class,'tes']);
+        Route::get('/result',[TesteeController::class,'result']);
         Route::get('/logout',[AuthenticatedSessionController::class,'destroy']);
     });
 

@@ -11,7 +11,7 @@
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="{{ url('css/styles.css') }}" rel="stylesheet" />
     <title>Login</title>
 </head>
 
@@ -39,7 +39,7 @@
                                 class="rounded-circle" style="width: 100px;" alt="Avatar" /><br>
                             LOGIN
                         </h5>
-                        <form action="{{ route('login') }}" method="POST">
+                        <form action="{{ url('admin/login') }}" method="POST">
                             @csrf
                             <div class="col-md-12 mb-2">
                                 <label>Username</label>
@@ -60,9 +60,10 @@
                             <div class="d-grid">
                                 <button class="btn btn-primary btn-login text-uppercase fw-bold"
                                     type="submit">Login</button>
-                                <p><br>Don't have an account?
-                                    <a class="link-danger" href="{{ route('register') }}">Register</a>
-                                </p>
+                                <!--p><br>Don't have an account?
+                                    <a class="link-danger">Please, call staff</a>
+                                </p-->
+                                <br>
                             </div>
                             <div class="d-grid">
                                 <a href="{{ url('/') }}">Back Home</a>

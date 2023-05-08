@@ -87,6 +87,14 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-12 mb-2">
+                                    <label>Phone Number</label>
+                                    <input type="text" class="form-control" id="phone" placeholder="Phone Number"
+                                        name="phone" value="{{old('phone')}}">
+                                    @error('phone')
+                                    <small id="phone" class="text-danger">{{$message}}</small>
+                                    @enderror
+                                </div>
+                                <div class="col-md-12 mb-2">
                                     <label>Username</label>
                                     <input type="text" class="form-control" id="username" placeholder="Username"
                                         name="username" value="{{old('username')}}">

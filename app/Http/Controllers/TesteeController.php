@@ -13,5 +13,23 @@ class TesteeController extends Controller
         return view('testee.dashboard');
     }
 
+    //testee profile
+    public function profile(){
+        return view('testee.profile');
+    }
 
+    //testee tes
+    public function tes(){
+        return view('testee.tes');
+    }
+
+    //testee result
+    public function result(){
+        return view('testee.result');
+    }
+
+    //testee changepw
+    public function changepw(){
+        return view('testee.change-password');
+    }
 }
